@@ -101,7 +101,9 @@ if ($theme_name == 'Nineteen') {
     include_once WL_COMPANION_PLUGIN_DIR_PATH . 'public/inc/enigma/testimonial-section.php';
     add_action('wl_companion_testimonial_enigma', ['wl_companion_testimonial_enigma', 'wl_companion_testimonial_enigma_html']);
 	
-	
+	/* about Html */
+    include_once WL_COMPANION_PLUGIN_DIR_PATH . 'public/inc/enigma/about-section.php';
+    add_action('wl_companion_aboutsection_guardian', ['wl_companion_about_enigma', 'wl_companion_about_enigma_html']);
 
 } elseif ($theme_name == 'Enigma Parallax' || $theme_name->template == 'enigma-parallax') {
 
@@ -116,7 +118,11 @@ if ($theme_name == 'Nineteen') {
     /* Portfolio Html */
     include_once WL_COMPANION_PLUGIN_DIR_PATH . 'public/inc/enigma-parallax/portfolio-section.php';
     add_action('wl_companion_portfolio_enigma_parallax', ['wl_companion_portfolios_enigma_parallax', 'wl_companion_portfolios_enigma_parallax_html']);
-
+	
+	/* about Html */
+    include_once WL_COMPANION_PLUGIN_DIR_PATH . 'public/inc/enigma-parallax/about-section.php';
+    add_action('wl_companion_aboutsection_enigma_parallax', ['wl_companion_about_enigma_parallax', 'wl_companion_about_enigma_parallax_html']);
+	
     /* Team Html */
     include_once WL_COMPANION_PLUGIN_DIR_PATH . 'public/inc/enigma-parallax/team-section.php';
     add_action('wl_companion_team', ['wl_companion_teams', 'wl_companion_teams_html']);

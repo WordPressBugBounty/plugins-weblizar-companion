@@ -7,22 +7,24 @@ class wl_companion_portfolios_enigma_parallax
 
     public static function wl_companion_portfolios_enigma_parallax_html() {
     ?>
-        <!-- portfolio section -->
-        <div class="clearfix"></div>
-        <div  id="portfolio" class="portfolio__section"></div>
-        <div class="enigma_project_section" <?php if ( ! empty ( get_theme_mod( 'upload__portfolio_image' ) ) ) { ?> style="background-image:url('<?php echo esc_url( get_theme_mod( 'upload__portfolio_image' ) ); ?>');"<?php } ?> >
-            <?php if ( ! empty ( get_theme_mod( 'port_heading' ) ) )  { ?>
+         <!-- portfolio section -->
+        <div class="enigma_project_section <?php if ($theme_name == 'Oculis') { ?>portfolio2<?php } ?>">
+            <?php
+            $port_heading = get_theme_mod('port_heading', 'Recent Works ');
+            if (!empty($port_heading)) { ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="enigma_heading_title">
-                                <h3><?php echo get_theme_mod( 'port_heading', 'Recent Works '); ?></h3>
+                                <h3><?php echo get_theme_mod('port_heading', 'Recent Works '); ?> </h3>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php } ?>
-            <?php if ( ! empty ( get_theme_mod('enigma_portfolio_data' ) ) ) {?>
+            <?php
+            $name_arr = unserialize(get_theme_mod('enigma_portfolio_data'));
+            if (!empty($name_arr)) { ?>
                 <div class="container">
                     <div class="row" >
                         <div id="enigma_portfolio_section" class="enima_photo_gallery">

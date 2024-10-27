@@ -38,7 +38,7 @@ class wl_portfolio_customizer {
 		) );
 
 	    $wp_customize->add_setting(
-			'enigma_portfolio_title',
+			'port_heading',
 			array(
 				'type'              => 'theme_mod',
 				'default'           => 'RECENT WORKS',
@@ -57,20 +57,7 @@ class wl_portfolio_customizer {
 				'selector' => '.enigma_heading_title h3',
 			) );
 
-		$wp_customize->add_setting( 'upload__portfolio_image',
-			array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-			)
-		);
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_portfolio_img_', array(
-			'label'    => __( 'Portfolio Background Image', WL_COMPANION_DOMAIN),
-			'section'  => 'portfolio_sec',
-			'settings' => 'upload__portfolio_image',
-		) ) );
+	
 
 		require( WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma-parallax/functions/portfolio-functions.php' );
 		if ( class_exists( 'enigma_Customizer_portfolio_fields') ) {
@@ -113,5 +100,4 @@ class wl_portfolio_customizer {
 
 	}
 }
-
 ?>

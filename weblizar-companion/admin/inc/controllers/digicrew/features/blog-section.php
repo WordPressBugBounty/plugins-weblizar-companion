@@ -87,6 +87,22 @@ require( WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/digicrew/function
 	    'section'     => 'blog_section',
 	    'settings'    => 'read_more',
     ) );
+	
+	$wp_customize->add_setting( 'excerpt_len', array(
+	    'type' => 'theme_mod',
+            'default' => __( '300', WL_COMPANION_DOMAIN ),
+            'sanitize_callback' => 'digicrew_sanitize_text',
+            'capability' => 'edit_theme_options',
+        )
+    );
+
+    $wp_customize->add_control( 'excerpt_len', array(
+	    'label'       => __( 'Excerpt length', WL_COMPANION_DOMAIN ),
+	    'description' => 'Excerpt length',
+	    'type'        => 'text',
+	    'section'     => 'blog_section',
+	    'settings'    => 'excerpt_len',
+    ) );
 
     
 	}

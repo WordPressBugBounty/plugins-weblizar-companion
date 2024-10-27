@@ -7,11 +7,11 @@ defined( 'ABSPATH' ) or die();
  */
 class wl_blog_customizer {
 	
-	public static function wl_guardian_blog_customizer( $wp_customize ) {
+	public static function wl_mediapulse_blog_customizer( $wp_customize ) {
 		 /* Blog Option */
     $wp_customize->add_section( 'blog_section', array(
 	    'title'      => __( 'Home Blog Options', WL_COMPANION_DOMAIN),
-	    'panel'      => 'guardian_theme_option',
+	    'panel'      => 'mediapulse_theme_option',
 	    'capability' => 'edit_theme_options',
 	    'priority'   => 40
     ) );
@@ -21,7 +21,7 @@ class wl_blog_customizer {
 	    array(
 		    'default'           => 1,
 		    'type'              => 'theme_mod',
-		    'sanitize_callback' => 'guardian_sanitize_checkbox',
+		    'sanitize_callback' => 'mediapulse_sanitize_checkbox',
 		    'capability'        => 'edit_theme_options'
 	    )
     );
@@ -38,41 +38,22 @@ class wl_blog_customizer {
 	    array(
 		    'type'              => 'theme_mod',
 		    'default'           => __( 'Latest News', WL_COMPANION_DOMAIN ),
-		    'sanitize_callback' => 'guardian_sanitize_text',
+		    'sanitize_callback' => 'mediapulse_sanitize_text',
 		    'capability'        => 'edit_theme_options',
 	    )
     );
 
-    $wp_customize->add_control( 'blog_title', array(
-	    'label'    => __( 'Home Blog Title', WL_COMPANION_DOMAIN ),
-	    'type'     => 'text',
-	    'section'  => 'blog_section',
-	    'settings' => 'blog_title',
-    ) );
+    
 
-    $wp_customize->selective_refresh->add_partial( 'blog_title', array(
-	    'selector' => '.feature_section5 h2',
-    ));
+    
+  
 
-    $wp_customize->add_setting( 'read_more', array(
-	    'type' => 'theme_mod',
-            'default' => __( 'Read More', WL_COMPANION_DOMAIN ),
-            'sanitize_callback' => 'guardian_sanitize_text',
-            'capability' => 'edit_theme_options',
-        )
-    );
-
-    $wp_customize->add_control( 'read_more', array(
-	    'label'       => __( 'Blog Read More Button', WL_COMPANION_DOMAIN ),
-	    'description' => 'Enter Read More button text',
-	    'type'        => 'text',
-	    'section'     => 'blog_section',
-	    'settings'    => 'read_more',
-    ) );
+    
+	
 	$wp_customize->add_setting( 'excerpt_len', array(
 	    'type' => 'theme_mod',
             'default' => __( '300', WL_COMPANION_DOMAIN ),
-            'sanitize_callback' => 'guardian_sanitize_text',
+            'sanitize_callback' => 'mediapulse_sanitize_text',
             'capability' => 'edit_theme_options',
         )
     );
@@ -84,8 +65,10 @@ class wl_blog_customizer {
 	    'section'     => 'blog_section',
 	    'settings'    => 'excerpt_len',
     ) );
+
     
 	}
+
 }
 
 ?>

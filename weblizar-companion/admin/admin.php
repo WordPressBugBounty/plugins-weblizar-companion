@@ -195,6 +195,7 @@ if ($theme_name == 'Nineteen') {
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/general-settings.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/slider-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/service-section.php');
+	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/about-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/testimonial-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/portfolio-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/blog-section.php');
@@ -204,7 +205,6 @@ if ($theme_name == 'Nineteen') {
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/footer-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/layout-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/typography-section.php');
-	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/team-section.php');
     
 	if( wp_get_theme() == 'Swiftly') :
 
@@ -230,6 +230,9 @@ if ($theme_name == 'Nineteen') {
 
 	/* Service Customizer Settings */
 	add_action('customize_register', array('wl_service_customizer', 'wl_enigma_service_customizer'));
+	
+	/* Service Customizer Settings */
+	add_action('customize_register', array('wl_about_customizer', 'wl_enigma_about_customizer'));
 
 	/* Portfolio Customizer Settings */
 	add_action('customize_register', array('wl_portfolio_customizer', 'wl_enigma_portfolio_customizer'));
@@ -240,8 +243,6 @@ if ($theme_name == 'Nineteen') {
 	/* testimonail Customizer Settings */
 	add_action('customize_register', array('wl_testimonial_customizer', 'wl_enigma_testimonial_customizer'));
 
-	/* team Customizer Settings */
-	add_action('customize_register', array('wl_team_customizer_new', 'wl_enigma_team_customizer_new'));
 	/* Extra Settings */
 	add_action('customize_register', array('wl_extra_customizer', 'wl_enigma_extra_customizer'));
 
@@ -268,6 +269,7 @@ if ($theme_name == 'Nineteen') {
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma-parallax/features/general-settings.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma-parallax/features/slider-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma-parallax/features/service-section.php');
+		require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma-parallax/features/about-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma-parallax/features/portfolio-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma-parallax/features/blog-section.php');
 
@@ -294,6 +296,9 @@ if ($theme_name == 'Nineteen') {
 
 	/* Service Customizer Settings */
 	add_action('customize_register', array('wl_service_customizer', 'wl_enigma_parallax_service_customizer'));
+	
+	/* About us Customizer Settings */
+	add_action('customize_register', array('wl_about_customizer', 'wl_enigma_parallax_about_customizer'));
 
 	/* Portfolio Customizer Settings */
 	add_action('customize_register', array('wl_portfolio_customizer', 'wl_enigma_parallax_portfolio_customizer'));
@@ -598,47 +603,70 @@ if ($theme_name == 'Nineteen') {
 elseif ($theme_name == 'fabstar' || $theme_name->template == 'fabstar') {
 
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/fabstar/features/typography-section.php');	
+	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/fabstar/features/blog-section.php');
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typography5_customizer', 'wl_fabstar_typography5_customizer'));
+	
+	add_action('customize_register', array('wl_blog_customizer', 'wl_fabstar_blog_customizer'));
 }
 
 elseif ($theme_name == 'is-medify' || $theme_name->template == 'is-medify') {
 
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/is-medify/features/typography-section.php');	
+	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/is-medify/features/blog-section.php');	
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typography7_customizer', 'wl_is_medify_typography7_customizer'));
+	
+	/* Blog Customizer Settings */
+	add_action('customize_register', array('wl_blog_customizer', 'wl_is_medify_blog_customizer'));
 }
 elseif ($theme_name == 'tripify' || $theme_name->template == 'tripify') {
 
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/tripify/features/typography-section.php');	
+	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/tripify/features/blog-section.php');	
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typography8_customizer', 'wl_tripify_typography8_customizer'));
+	/* Blog Customizer Settings */
+	add_action('customize_register', array('wl_blog_customizer', 'wl_tripify_blog_customizer'));
 }
 
 elseif ($theme_name == 'ismoderna' || $theme_name->template == 'ismoderna') {
 
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/ismoderna/features/typography-section.php');	
+	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/ismoderna/features/blog-section.php');	
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typography9_customizer', 'wl_ismoderna_typography7_customizer'));
+	/* Blog Customizer Settings */
+	add_action('customize_register', array('wl_blog_customizer', 'wl_ismoderna_blog_customizer'));
+	
 }
 
 elseif ($theme_name == 'wheelify' || $theme_name->template == 'wheelify') {
 
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/wheelify/features/typography-section.php');	
+	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/wheelify/features/blog-section.php');	
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typography4_customizer', 'wl_wheelify_typography4_customizer'));
+	/* Blog Customizer Settings */
+	add_action('customize_register', array('wl_blog_customizer', 'wl_wheelify_blog_customizer'));
 }
 elseif ($theme_name == 'markito' || $theme_name->template == 'markito') {
 
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/markito/features/typography-section.php');	
+	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/markito/features/blog-section.php');
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typographys_customizer', 'wl_markito_typographys_customizer'));
+	/* Blog Customizer Settings */
+	add_action('customize_register', array('wl_blog_customizer', 'wl_markito_blog_customizer'));
 }
 elseif ($theme_name == 'mediapulse' || $theme_name->template == 'mediapulse') {
 
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/mediapulse/features/typography-section.php');	
+		require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/mediapulse/features/blog-section.php');
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typography10_customizer', 'wl_mediapulse_typography10_customizer'));
+	/* Blog Customizer Settings */
+	add_action('customize_register', array('wl_blog_customizer', 'wl_mediapulse_blog_customizer'));
 }
 elseif ($theme_name == 'enigma-parallax' || $theme_name == 'Enigma' || $theme_name == 'Weblizar' || $theme_name == 'Creative' || $theme_name == 'Explora' || $theme_name == 'Guardian' || $theme_name == 'HealthCare') {
 	wl_companion_helper::wl_add_import_menu();

@@ -2,16 +2,17 @@
 
 defined( 'ABSPATH' ) or die();
 
-class wl_companion_about_guardian
-{
-    
-    public static function wl_companion_about_guardian_html() {
+class wl_companion_about_enigma_parallax{
+    public static function wl_companion_about_enigma_parallax_html() {
+        $theme_name = wl_companion_helper::wl_get_theme_name();
+   
     ?>
-
-
-
-
-<section class="about_section layout_padding">
+	<!-- about section -->
+	
+	
+	
+	
+	<section class="about_section layout_padding">
   <div class="container">
     <div class="row">
       <div class="col-md-6 px-0">
@@ -37,7 +38,7 @@ class wl_companion_about_guardian
 							<?php } else { ?>
 							<p><?php esc_html_e('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry.','guardian'); ?></p>
 							<?php } ?>
-          <div class="btn-box"><a href="<?php echo esc_url(get_theme_mod('about_link','#')); ?>"><i class="fa fa-chevron-circle-right"></i>
+          <div class="btn-box"><a href="<?php echo esc_url(get_theme_mod('about_link','#')); ?>">
 		  <?php esc_html_e('Read More','guardian'); ?>
 		  </a></div>
         </div>
@@ -45,10 +46,7 @@ class wl_companion_about_guardian
     </div>
   </div>
 </section>
-
-
-
-
+	
 
 	<?php }
 } ?>

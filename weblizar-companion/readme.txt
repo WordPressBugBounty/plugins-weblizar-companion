@@ -3,8 +3,8 @@ Contributors: vibhorp
 Donate link: https://www.infigosoftware.in/
 Tags: drag, drop, builder
 Requires at least: 4.0
-Tested up to: 6.4
-Stable tag: 1.55
+Tested up to: 6.6
+Stable tag: 1.56
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,8 +62,11 @@ The exceptions to this license are as follows:
 
 
 == Changelog ==
+** 1.56 **
+About us section added in enigma, enigma-parallax and guardian
+
 ** 1.55 **
-Blog Excerpt update
+enigma, enigma-parallax excerpt length option added in Blog setting
 
 ** 1.54 **
 Typo setting Update for many themes.
