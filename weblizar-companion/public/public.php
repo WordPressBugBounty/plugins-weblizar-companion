@@ -104,6 +104,8 @@ if ($theme_name == 'Nineteen') {
 	/* about Html */
     include_once WL_COMPANION_PLUGIN_DIR_PATH . 'public/inc/enigma/about-section.php';
     add_action('wl_companion_aboutsection_guardian', ['wl_companion_about_enigma', 'wl_companion_about_enigma_html']);
+	
+	
 
 } elseif ($theme_name == 'Enigma Parallax' || $theme_name->template == 'enigma-parallax') {
 

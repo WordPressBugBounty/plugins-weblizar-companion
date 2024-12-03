@@ -19,6 +19,31 @@ class wl_footer_customizer {
 			)
 		);
 
+
+
+
+$wp_customize->add_setting(
+	    'enigma_footer_section_areas',
+	    array(
+		    'default'           => 1,
+		    'type'              => 'theme_mod',
+		    'sanitize_callback' => 'enigma_sanitize_checkbox',
+		    'capability'        => 'edit_theme_options'
+	    )
+    );
+
+    $wp_customize->add_control( 'enigma_footer_section_areas', array(
+	    'label'    => __( 'Enable Footer Widget Area', WL_COMPANION_DOMAIN),
+	    'type'     => 'checkbox',
+	    'section'  => 'footer_section',
+	    'settings' => 'enigma_footer_section_areas'
+    ) );
+
+
+
+
+
+
 		$wp_customize->add_setting(
 			'footer_customizations',
 			array(
@@ -95,6 +120,16 @@ class wl_footer_customizer {
 				'settings'   => 'developed_by_link'
 			) 
 		);
+		
+		
+		
+
+
+
+
+	
+		
+		
 	}
 }
 

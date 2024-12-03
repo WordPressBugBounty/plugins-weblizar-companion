@@ -95,6 +95,35 @@ class wl_footer_customizer {
 				'settings'   => 'developed_by_link'
 			) 
 		);
+		
+		
+		
+		
+		
+		
+$wp_customize->add_setting('digicrew_footer_areas', array(
+    'default'           => '1', // Default is '1', meaning the footer widget area is visible.
+    'type'              => 'theme_mod',
+    'sanitize_callback' => 'digicrew_sanitize_checkbox', // Make sure to have a proper sanitization callback for checkboxes
+    'capability'        => 'edit_theme_options',
+));
+
+$wp_customize->add_control('digicrew_footer_areas', array(
+    'label'   => __( 'Enable Footer Widget Area', 'digicrew' ),
+    'type'    => 'checkbox', // It is a checkbox, so true/false or 1/0
+    'section' => 'footer_section',
+    'settings'=> 'digicrew_footer_areas',
+));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
 

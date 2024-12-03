@@ -205,6 +205,7 @@ if ($theme_name == 'Nineteen') {
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/footer-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/layout-section.php');
 	require_once(WL_COMPANION_PLUGIN_DIR_PATH . 'admin/inc/controllers/enigma/features/typography-section.php');
+	
     
 	if( wp_get_theme() == 'Swiftly') :
 
@@ -260,6 +261,8 @@ if ($theme_name == 'Nineteen') {
 	
 	/* Typography Customizer Settings */
 	add_action('customize_register', array('wl_typography_customizer', 'wl_enigma_typography_customizer'));
+	
+	
 
 } elseif ($theme_name == 'Enigma Parallax' || $theme_name->template == 'enigma-parallax') {
 

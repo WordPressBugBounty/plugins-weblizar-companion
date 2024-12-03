@@ -18,6 +18,31 @@ class wl_footer_customizer {
 			    'priority' => 50,
 			)
 		);
+		
+		
+		
+		
+		$wp_customize->add_setting(
+	    'guardian_footer_section_areas',
+	    array(
+		    'default'           => 1,
+		    'type'              => 'theme_mod',
+		    'sanitize_callback' => 'guardian_sanitize_checkbox',
+		    'capability'        => 'edit_theme_options'
+	    )
+    );
+
+    $wp_customize->add_control( 'guardian_footer_section_areas', array(
+	    'label'    => __( 'Enable Footer Widget Area', WL_COMPANION_DOMAIN),
+	    'type'     => 'checkbox',
+	    'section'  => 'footer_section',
+	    'settings' => 'guardian_footer_section_areas'
+    ) );
+		
+		
+		
+		
+		
 
 		$wp_customize->add_setting(
 			'guardian_footer_customization',
@@ -79,6 +104,15 @@ class wl_footer_customizer {
 				'settings'   => 'guardian_deve_link'
 			) 
 		);
+		
+		
+		
+	
+	
+		
+		
+		
+		
 	}
 }
 ?>

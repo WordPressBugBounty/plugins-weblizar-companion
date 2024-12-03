@@ -22,7 +22,7 @@ class wl_companion_about_enigma{
 					<?php if(get_theme_mod('About_Image')) { ?>
                     <img src="<?php echo esc_url(get_theme_mod('About_Image')); ?>">
 					<?php } else { ?>
-					<img src="<?php echo (has_post_thumbnail()) ? esc_url(the_post_thumbnail_url('medium')) : esc_url(get_template_directory_uri()) . '/images/about.jpg'; ?>">
+					<img src="<?php echo (has_post_thumbnail()) ? esc_url(the_post_thumbnail_url('medium')) : esc_url(get_template_directory_uri()) . '/images/about-us.jpg'; ?>">
 					<?php } ?>
 			</a>
 		  </div>
