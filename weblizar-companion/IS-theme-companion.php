@@ -5,7 +5,7 @@ Plugin URI:
 Description: Enhances themes with extra functionality for Infigo Software Themes.
 Author: vibhorp
 Author URI: www.infigosoftware.in
-Version: 1.57
+Version: 1.58
 Text Domain: WL_COMPANION
 Domain Path: /lang/
 */
