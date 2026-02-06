@@ -3,8 +3,8 @@ Contributors: vibhorp
 Donate link: https://www.infigosoftware.in/
 Tags: drag, drop, builder
 Requires at least: 4.0
-Tested up to: 6.8
-Stable tag: 1.58
+Tested up to: 6.9
+Stable tag: 1.59
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
